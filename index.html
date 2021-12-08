@@ -1,0 +1,242 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--indique avec quel jeu de caractères un site Web est écrit.-->
+    <link rel="stylesheet" type="text/css" href="css/cv.css" />
+    <!--permet de relier le ficher html et le ficher css-->
+    <script src="https://kit.fontawesome.com/4c9a69a913.js" crossorigin="anonymous"></script>
+    <!--permet l'utilisation de l'outil "fontawesome" pour les icons-->
+    <title>CV</title>
+    <!--titre du document-->
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="pptopper">
+                <img class="photoprofile" src="photo de profile.jpeg">
+                <!--insert l'image "photo de profile.jpg"-->
+            </div>
+            <div class="texttopper">
+                <div class="blocname">
+                    <span class="name">Tilio</span>
+                    <span class="lastname">Charrier</span>
+                    <span class="job-title">Etudiant Informatique</span>
+                </div>
+                <div class="link">
+                    <div>
+                        <a href="https://www.linkedin.com/in/tilio-charrier-2a6210222/"> <i
+                                class="fab fa-linkedin"></i></a>
+                        <!--lie le lien du profile linkedin sur l'icon fontawesome-->
+                        <span>https://www.linkedin.com/in/tilio-charrier-2a6210222</span>
+                    </div>
+                    <div>
+                        <a href="https://www.instagram.com/tilio.chr/"><i class="fab fa-instagram"></i></a>
+                        <!--lie le lien du profile instagram sur l'icon fontawesome-->
+                        <span>https://www.instagram.com/tilio.chr/</span>
+                    </div>
+                </div>
+                <ul class="description">
+                    <!--Les balises ul et li sont utilisé plusieurs fois, elles permettent de crée une liste, chaque element etant separé par les balises li-->
+                    <li>
+                        DATE DE NAISSANCE : 11 octobre 2003
+                    </li>
+                    <li>
+                        ADRESSE : 41 rue gervais bussiere
+                    </li>
+                    <li>
+                        CONTACT : 07 85 14 05 14
+                    </li>
+                    <li>
+                        EMAIL : tilio.charrier@etu.univ-lyon1.fr
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <article class="qualite">
+            <!--chaque balise article (et les balises header et footer) correspond a une case de mon cv-->
+            <div class="title">
+                <h2>Qualités</h2>
+                <!--les balises h2 contienne le titre de la case dans laquel elle se situe-->
+            </div>
+            <div class="grid_image">
+                <div>
+                    <img class="image" class="ideation" src="ideation.png" />
+                    <img class="image" class="research" src="research.jpg" />
+                    <img class="image" class="design" src="design thinking.png" />
+                </div>
+                <div>
+                    <img class="image" class="prototyping" src="prototiping.png" />
+                    <img class="image" class="presentation" src="presentation.png" />
+                    <img class="image" class="oratory" src="oratory.png" />
+                </div>
+            </div>
+        </article>
+
+        <article class="a_propos_de_moi">
+            <h2>A propos de moi</h2>
+            <p>Je suis étudiant en 1er année BUT Informatique à Lyon 1,
+                Je suis un passioné d'informatique toujours enthousiasmé par
+                par l'idée de d'apprendre de nouvelles choses. <br>
+                C'est pourquoi j'aimerai travailler avec vous. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus fusce vitae augue ut metus aliquet sagittis in at ante. Lorem ipsum dolor sit amet orci
+                aliquam.
+                posuere cubilia curae. Proin consectetur enim id efficitur blandit. Nunc sed vestibulum. </p>
+        </article>
+
+        <article class="langagues">
+            <h2>Langues</h2>
+            <ul>
+                <li>
+                    <span>Français</span>
+                    <!--affiche la langue-->
+                    <div class="square">
+                        <!--affiche le carré-->
+                        <span class="R">R</span>
+                        <!--affiche la lettre R dans le carré-->
+                    </div>
+                    <div class="square">
+                        <!--cela se repète pour les lettres W et S-->
+                        <span class="W">W</span>
+                    </div>
+                    <div class="square">
+                        <span class="S">S</span>
+                    </div>
+                </li>
+                <li>
+                    <!--l'ensemble de ces lignes se repète pour chaque langue-->
+                    <span>Espagnol</span>
+                    <div class="square">
+                        <span class="R">R</span>
+                    </div>
+                    <div class="square">
+                        <span class="W">W</span>
+                    </div>
+                    <div class="whitesquare">
+                        <span class="S">S</span>
+                    </div>
+                </li>
+                <li>
+                    <span>Anglais</span>
+                    <div class="square">
+                        <span class="R">R</span>
+                    </div>
+                    <div class="square">
+                        <span class="W">W</span>
+                    </div>
+                    <div class="square">
+                        <span class="S">S</span>
+                    </div>
+                <li>
+                    <span>Japonais</span>
+                    <div class="square">
+                        <span class="R">R</span>
+                    </div>
+                    <div class="whitesquare">
+                        <span class="W">W</span>
+                    </div>
+                    <div class="whitesquare">
+                        <span class="S">S</span>
+                    </div>
+                </li>
+            </ul>
+        </article>
+
+        <article class="autre_competence">
+            <h2>Autres compétences</h2>
+            <span class="text_autre_competence">
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi
+                    felis lorem. Sed ullamcorper porttitor sapien
+                    vestibulum feugiat. Sed pretium vel dui a maximus.</p>
+                <p>Vestibulum a velit congue, suscipit elit at, viverra lorem. In magna nulla, mattis ac iaculis
+                    finibus, aliquam eu sem.</p>
+                <p> Nunc pulvinar aliquet magna, eget tempus urna lobortis sit amet. Pellentesque venenatis suscipit
+                    massa, id pulvinar sapien varius a. Cras eros tortor, gravida quis velit in, rhoncus bibendum ex.
+                </p>
+            </span>
+        </article>
+
+        <article class="etudes">
+            <h2>Etudes</h2>
+            <p>- Brevet des collèges (2016 - 2017)</p>
+            <p>- Bac mention bien (2020 - 2021)</p>
+            <p>- Peut-être un BUT Informatique à l'IUT Lyon 1</p>
+            <p>- J'ai fini toutes les coupes en or sur MarioKart Wii</p>
+        </article>
+
+        <article class="passion">
+            <h2>Passion</h2>
+            <div class="passion_list">
+                <div>
+                    <span>Jeux video</span>
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div>
+                    <span>Imagerie</span>
+                    <i class="fas fa-photo-video"></i>
+                </div>
+                <div>
+                    <span>Musique</span>
+                    <i class="fas fa-compact-disc"></i>
+                </div>
+                <div>
+                    <span>Sports Mécaniques</span>
+                    <i class="fas fa-car-side"></i>
+                </div>
+            </div>
+        </article>
+
+        <article class="competence_logiciel">
+            <h2>Compétences Logiciels</h2>
+            <div class="competence">
+                <span class="logiciel">illustator</span>
+                <progress max="10" value="4"></progress>
+                <!--fais apparaitre une barre de progres completé à 40%-->
+                <span class="logiciel">photoshop</span>
+                <progress max="10" value="8"></progress>
+                <!--fais apparaitre une barre de progres completé à 80%-->
+                <span class="logiciel">CodeBlocks</span>
+                <progress max="10" value="4"></progress>
+                <!--fais apparaitre une barre de progres completé à 40%-->
+                <span class="logiciel">Première pro</span>
+                <progress max="10" value="9"></progress>
+                <!--fais apparaitre une barre de progres completé à 90%-->
+                <span class="logiciel">Excel</span>
+                <progress max="10" value="2"></progress>
+                <!--fais apparaitre une barre de progres completé à 20%-->
+                <span class="logiciel">Word</span>
+                <progress max="10" value="6"></progress>
+                <!--fais apparaitre une barre de progres completé à 60%-->
+                <span class="logiciel">FL Studio</span>
+                <progress max="10" value="8"></progress>
+                <!--fais apparaitre une barre de progres completé à 80%-->
+            </div>
+        </article>
+
+        <footer>
+            <h2>Centre d'intérets</h2>
+            <div>
+                <div class=logo>
+                    <i class="far fa-file-code"></i>
+                    <span>Programmation</span>
+                </div>
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <span>Innovation technologique</span>
+                </div>
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>Intelligence Artificielle</span>
+                </div>
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Sécurité Informatique</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

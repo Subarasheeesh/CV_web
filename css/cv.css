@@ -1,0 +1,345 @@
+* {
+  margin: 0;    /* Reset CSS */
+ padding: 0;    /*certain navigateur mettent du padding/margin sur certain éléments, hors cela me pose probleme alors je les enleves*/
+}
+
+body{
+  background: #9FB4AF; /*applique la couleur #9FB4AF sur le fond de l'element body*/
+  display: flex; /*utilise le systeme flex sur les elements contenu dans body*/
+  justify-content: center; /*centre horizontalement les elements contenu dans body*/
+  align-items: center; /*centre verticalement les elements contenu dans body*/
+  font-family: calibri; /*applique la police de tout le texte contenu directement ou non dans body en Calibri*/
+  color: #24242b; /*applique la couleur de tout le texte contenu directement ou non dans body en #24242b*/
+  font-size: 20px; /*applique la taille de police de tout le texte contenu directement ou non dans body à 20 pixels*/
+}
+
+main, .photoprofile, .image, progress::-webkit-progress-value, .link > div > a {
+  background-color: #526569; /*applique la couleur #526569 sur le fond des 5 elements cité au dessus*/
+}
+
+article, header, footer {
+  background-color: #becfc5; /*applique la couleur #becfc5 sur le fond des elements*/
+  padding: 20px; /*definit 20 pixels d'ecarts de remplissage sur les quatre côtés des elements*/
+  border-radius: 5px; /*arrondit les angles des elements de 5 pixels*/
+}
+
+main {
+  display: grid; /*utilise le systeme grid*/
+  grid-gap: 10px; /*ecarte de 10 pixels tout les elements dans le main*/
+  padding: 10px; /*definit 10 pixels d'ecarts de remplissage sur les quatres côtés de l'elements*/
+  grid-template-columns: 25% 25% 49%; /*definit 3 colonnes, deux qui font 25% de l'ecran chaqu'une et une troisieme qui fait 49% de l'ecran*/
+  grid-template-rows: 270px 350px 200px 200px 465px 220px; /*créer 6 lignes et definit pour chaqu'un d'elle sa taille (270 pixels, 350 pixels, 200 pixels, 465 pixels, 220 pixels)*/
+  max-width: 1000px; /*definit la largeur maximal de l'element à 1000 pixels*/
+  min-height: 100px; /*definit la largeur minimal de l'element à 100 pixels*/
+}
+
+header {
+  grid-column-start: 1; /*place l'elements dans la grille definit plus haut*/
+  grid-column-end: 4; /* ^ */
+  grid-row-start: 1; /* ^ */
+  grid-row-end: 2; /* ^ */
+  display: flex;
+  margin-right: 10px; /*créer une marge de 10 pixels à droite de l'element*/
+}
+
+.pptopper { /*se charge de placer et centrer la photo de profile*/
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: flex;
+  align-items: center;
+}
+
+.texttopper { /*se charge de placer la grille qui contient tout le texte du header*/
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-left: 20px;
+  display: grid;
+  grid-template-areas: /*definit une grille 2x2 et nomme des zones dans cette grille*/
+  "name description"
+  "link description";
+}
+
+.name, .lastname { /*ajuste la taille de police du nom et prenom*/
+  font-size: 50px;
+}
+
+.blocname { /*place et centre le nom le prenom et le statut dans la grille du header*/
+  grid-area: name; /*place l'element dans la zone nommé "name" de la grille definit*/
+  display: flex;
+  flex-direction: column; /*definit la direction dans laquel sont placé les elements dans .blocname, ici à la verticale*/
+  text-align: center; /*aligne le texte au centre*/
+}
+
+.link { /*place les liens dans la grille du header et ajuste la taille de police*/
+  grid-area: link; /*place l'element dans la zone nommé "link" de la grille definit*/
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.link > div { /*ecarte les liens (et leurs icon) du blocname et l'un de l'autre*/
+  display: flex;
+  padding-top: 10px; /*definit 10 pixels d'ecarts de remplissage sur le côté haut de tout les elements div contenu directement dans .link*/
+}
+
+.link > div > span { /*ecarte les liens de leurs icon*/
+  padding-left: 10px; /*definit 10 pixels d'ecarts de remplissage sur le côté bas de tout les elements span contenu directement dans div contenu directement dans .link*/
+}
+
+.link > div > a { /*se charge de faire le cercle derrière les icons link*/
+  display: flex;
+  border-radius: 100%; /*arrondit les angles à 100% ce qui donne du coup un cercle*/
+  height: 25px; /*definit la hauteur à 25 pixels*/
+  width: 25px; /*definit la largeur à 25 pixels*/
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /*retire les decorations ajouter par defaut à un lien (retire le soulignage)*/
+  color: #becfc5;
+}
+
+.description { /*place la description dans le header*/
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /*espace les elements equitablement selon l'axe principal, l'espace entre les elements et egalement entre le bord du conteneur et le premier et dernier element*/
+  margin-left: 40px; /*ajoute une marge de 40 pixels à gauche de l'elements*/
+}
+
+.photoprofile { /*se charge de faire le cercle qui contient la photo de profile*/
+  border-radius: 100%;
+  padding: 2px;
+  height: 200px;
+  width: 200px;
+}
+
+.qualite { /*place l'article "qalité" dans la grille du main*/
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  --height-title:30px; /*proprieté personnalisé, contient la valeur de la taille du titre du conteneur "qualité"*/
+}
+
+.qualite > .title{
+  height: var(--height-title); /*applique la valeur de la propriété personnalisé "height-title" pour definir la hauteur de l'element*/
+}
+
+.image { /*se charge de faire les cercles qui contiennent les image dans l'article "qualité"*/
+  border-radius: 100%;
+  padding: 4px;
+}
+
+div.grid_image{ /*se charge de placer la grille dans laquel se place les images dans l'article "qualité"*/
+  height: calc(100% - var(--height-title)); /*soustrait la valeur de la propriété personnalisé "height-title" au 100% de l'espace existant dans le conteneur
+  et utilise le resultat pour definir la hauteur de l'element, soit 100% moins 30 pixels*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+  
+div.grid_image > div{ /*espace les images entre elle*/
+  display: flex;
+  justify-content: space-between; /*espace equitablement les elements*/
+}
+
+div.grid_image > div > img{ /*donne les dimensions pour les images dans l'article "qualité"*/
+  width: 130px;
+  height: 130px;
+}
+
+
+article.a_propos_de_moi { /*place l'article "a_propose_de_moi" dans la grille du main*/
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-right: 10px;
+}
+
+article.a_propos_de_moi p, article.autre_competence p { /*ecarte le texte et le titre de l'article pour "a_propos_de_moi" et "autre_competence" et ajuste la taille de police*/
+  font-size: 20px;
+  margin-top: 20px; /*ajoute une marge de 20 pixels en haut de l'element*/
+}
+
+article.langagues { /*place l'article "langages" dans la grille de main et crée une grille dans l'article*/
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-template-areas: /*definit une grille 2x2 et nomme les zone de la grille*/
+  "langue1 langue2"
+  "langue3 langue4";
+}
+
+article.langagues > ul { /*ecarte la liste des langues et le titre de l'article*/
+  margin-top: 15px;
+}
+
+article.langagues > ul > li { /*espace les elements de la liste de l'article "langagues" entre eux*/
+  display: flex;
+  justify-content: space-between;
+}
+
+span.R, span.W, span.S { /*centre verticalement la lettre contenu dans les carrés*/
+  align-self: center; /*aligne les elements sur l'axe verticale*/
+}
+
+div.square, div.whitesquare { /*crée les carrés R W S, centre horizontalement la lettre contenu dedans et les espaces entre eux*/
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-style: solid; /*affiche les bord de l'element*/
+  border-width: 2px; /*definit la largeur des bord de l'element*/
+  border-radius: 4px; /*arrondit les angles de l'element*/
+}
+
+div.square { /*donne la couleur des carrés dont la competence et acquise*/
+  background-color: #9FB4AF ;
+}
+
+div.whitesquare { /*donne la couleur des carrés dont la competence n'est pas acquise*/
+  background-color: white;
+}
+
+article.langagues > ul { /*crée une grille pour placer chaque langues*/
+  display: grid;
+  grid-template-columns: 50% 50%; /*créer 2 colonnes de 50% de l'espace du conteneur chacun*/
+  grid-template-rows: 50% 50%; /*crée 2 lignes de 50% de l'espace du conteneur chacun*/
+  justify-content: center;
+}
+
+article.langagues > ul > li { /*ajuste le placement des langues*/
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+article.autre_competence { /*place l'article "autre_competence" dans la grille du main*/
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  margin-right: 10px;
+}
+
+article.etudes { /*place l'article "etudes" dans la grille de main*/
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+article.etudes > p { /*ecarte tout les elements p entre eux et ajuste la taille de police*/
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+article.passion { /*place l'article "passion" dans la grille de main*/
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+div.passion_list span, .job-title { /*ajuste la taille de police*/
+  font-size: 20px;
+}
+
+div.passion_list i { /*ajuste la taille de police*/
+  font-size: 60px;
+}
+
+div.passion_list div { /*ecarte le nom de la passion et son icon, et ecarte chaque element div de l'article passion entre eux*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+div.passion_list { /*change la direction dans laquel s'aligne les passions (vertical)*/
+  display: flex;
+  flex-direction: column;
+}
+
+.competence_logiciel { /*place l'article "logiciel" dans la grille de main*/
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  margin-right: 10px;
+}
+
+.competence { /*crée 2 colonnes, la première qui contient les nom des logiciels, et la deuxieme qui contient les progress bar.
+  Ecarte egalement l'ensemble de la liste et le titre de l'article*/
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 15px;
+}
+
+.logiciel, progress { /*ecarte les ensembles nom logiciel + progress bar les uns des autres*/
+  margin-top: 30px;
+}
+
+progress { /*personnalise les progress bar (taille, epaisseur, ombre, angles)*/
+  border-radius: 2px; 
+  width: 80%;
+  height: 10px;
+  box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 ); /*affiche une ombre de la barre de progres avec un decalage horizontal et vertical de 1 pixel,
+  un rayon de flou de 4 pixels et une couleur noir tres transparente*/
+}
+
+progress::-webkit-progress-bar { /*utilisation de propriété webkit pour personnalisé la barre de progres*/
+  background-color: white; /*donne la couleur blanche à la barre de progres*/
+  border-radius: 2px; /*arrondit les angles de 2 pixels*/
+}
+
+progress::-webkit-progress-value { /*utilisation de propriété webkit pour personnalisé la valeur afficher dans la barre de progres*/
+  border-radius: 2px; /*arrondit les angles de 2 pixels*/
+} /*à noté que la couleurs de la valeur afficher dans la barre de progres est modifié en haut de la feuille css en meme temps que tout les elements aillant la meme couleur*/
+
+footer { /*place le footer dans la grille de main*/
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  margin-right: 10px;
+}
+
+footer > div { /*espace les elements contenu dans le footer (hors titre) les uns des autres*/
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo > i {
+  font-size: 80px;
+}
+
+.logo > span {
+  margin-top: 15px;
+}
+
+::-webkit-scrollbar { /*utilisation des propriété webkit pour personnalisé la scrollbar*/
+    width: 30px; /*definit la largeur de la scrollbar à 30 pixels*/
+}
+
+::-webkit-scrollbar-thumb { /*utilisation des propriété webkit pour personnalisé la thumb (l'element en mouvement) de la scrollbar*/
+    background: #becfc5; /*definit la couleur de la thumb sur #becfc5*/
+    border: 7px solid #526569; /*affiche les bords de la thumb avec une epaisseur de 7 pixel et une couleur #526569*/
+    border-radius: 100vw; /*arrondit les angles de la thumb à 100vw (viewport width, relatif à la largeur du conteneur initial)*/
+}
+
+::-webkit-scrollbar-thumb:hover { /*utilisation des propriété webkit pour personnalisé le hover (quand on passe la souris sur l'element) de la thumb de la scrollbar*/
+    background: #7e8f8b; /*change la couleur en #7e8f8b (quand hover)*/
+}

@@ -1,0 +1,6 @@
+F1 -> json :
+
+
+{
+    "editor.formatOnSave": true
+}
